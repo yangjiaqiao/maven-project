@@ -11,9 +11,9 @@ pipeline {
 
     triggers {
          pollSCM('* * * * *')
-     }
+    }
 
-     stages{
+    stages{
         stage('Build'){
             steps {
                 sh 'mvn clean package'
@@ -26,13 +26,14 @@ pipeline {
             }
         }
 
-     stage ('Deployments'){
+         stage ('Deployments'){
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
                         sh "scp -i /var/jenkins_home/aws-key/my-tomcat-key.txt **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
                     }
                 }
+            }
         }
     }
 }
