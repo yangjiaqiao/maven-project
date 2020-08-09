@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    toos{
+    tools{
         maven 'LOCAL MAVEN3'
     }
     stages{
