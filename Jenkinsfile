@@ -30,7 +30,7 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp -i /var/jenkins_home/aws-key/my-tomcat-key.txt **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
+                        sh "scp -i /var/jenkins_home/aws-key/my-tomcat-key.txt  /var/jenkins_home/workspace/my-first-jenkins-remotely-job/webapp/target/*.war  ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
                     }
                 }
             }
