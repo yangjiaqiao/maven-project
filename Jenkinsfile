@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    toos{
+        maven 'LOCAL MAVEN3'
+    }
     stages{
         stage('Init'){
             steps {
