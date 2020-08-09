@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools{
-        maven 'local maven'
+        maven 'LOCAL MAVEN3'
     }
 
     parameters{
